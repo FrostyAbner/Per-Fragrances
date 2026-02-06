@@ -1,0 +1,132 @@
+:root {
+    --primary: #1a1a1a;
+    --secondary: #d4af37;
+    --accent: #8b7355;
+    --light: #f5f1e8;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Make html and body full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+    color: var(--primary);
+    /* Flexbox layout to push footer down */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content grows to fill space */
+main {
+    flex: 1;
+}
+
+.serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* HERO */
+.hero {
+    min-height: 70vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px var(--shadow);
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.fragrance-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.price-tag {
+    background: linear-gradient(135deg, var(--primary), #2a2a2a);
+    color: var(--secondary);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.animate-fadein {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+/* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Navigation hover effect */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile menu toggle */
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
